@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:test_app/auth_button/auth_button.dart';
 import 'package:test_app/auth_screen/signup_screen.dart';
 import 'package:test_app/constraints/colors.dart';
+import 'package:test_app/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -65,6 +66,9 @@ class LoginScreen extends StatelessWidget {
                 height: 10,
               ),
               AuthButton(
+                navigate: () {
+                  Get.to(() => const NoteScreen());
+                },
                 text: "Login",
                 navigation: "Don't have an account? create account",
                 onPressed: () {

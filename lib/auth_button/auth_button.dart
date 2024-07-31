@@ -6,11 +6,13 @@ class AuthButton extends StatelessWidget {
       {super.key,
       required this.text,
       required this.navigation,
-      required this.onPressed});
+      required this.onPressed,
+      required this.navigate});
 
   final String text;
   final String navigation;
   final VoidCallback onPressed;
+  final VoidCallback navigate;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +29,7 @@ class AuthButton extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: blue,
               ),
-              onPressed: () {},
+              onPressed: navigate,
               child: Text(
                 text,
                 style: const TextStyle(

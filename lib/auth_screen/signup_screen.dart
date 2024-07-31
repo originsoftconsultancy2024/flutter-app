@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_app/auth_button/auth_button.dart';
 import 'package:test_app/auth_screen/login_screen.dart';
+import 'package:test_app/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -52,6 +53,9 @@ class SignupScreen extends StatelessWidget {
                 height: 15,
               ),
               AuthButton(
+                 navigate: () {
+                  Get.to(() => const NoteScreen());
+                },
                 text: "Sign up",
                 navigation: "Already have an account",
                 onPressed: () {
