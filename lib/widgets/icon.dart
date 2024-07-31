@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/view/date_screen/date_screen.dart';
 
 class IconWidget extends StatelessWidget {
   const IconWidget({super.key, required this.icon, required this.color});
@@ -16,7 +18,9 @@ class IconWidget extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => const DateScreen());
+        },
         icon: Icon(
           icon,
         ),

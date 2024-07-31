@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:test_app/view/date_screen/date_screen.dart';
 import 'package:test_app/widgets/container.dart';
 import 'package:test_app/widgets/decoration.dart';
 import 'package:test_app/widgets/icon.dart';
@@ -51,51 +53,69 @@ class NoteScreen extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const Expanded(
+              Expanded(
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.blue,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.green,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.red,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.yellow,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.purple,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       DecorationWidget(
+                        onPressed: () {
+                          Get.to(() => const DateScreen());
+                        },
                         title: "ROOM DECORATION",
                         date: "23 MAY 2024",
                         color: Colors.black,

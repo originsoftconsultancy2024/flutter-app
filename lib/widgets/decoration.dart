@@ -6,11 +6,13 @@ class DecorationWidget extends StatelessWidget {
       {super.key,
       required this.color,
       required this.title,
-      required this.date});
+      required this.date,
+      required this.onPressed});
 
   final String title;
   final String date;
   final Color color;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -39,9 +41,12 @@ class DecorationWidget extends StatelessWidget {
                     fontSize: 25,
                   ),
                 ),
-                const IconWidget(
-                  icon: Icons.arrow_forward_ios_outlined,
-                  color: Colors.white,
+                InkWell(
+                  onTap: onPressed,
+                  child: const IconWidget(
+                    icon: Icons.arrow_forward_ios_outlined,
+                    color: Colors.white,
+                  ),
                 )
               ],
             ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/auth_button/auth_button.dart';
-import 'package:test_app/auth_screen/signup_screen.dart';
+import 'package:test_app/view/auth_button/auth_button.dart';
+import 'package:test_app/view/auth_screen/signup_screen.dart';
 import 'package:test_app/constraints/colors.dart';
-import 'package:test_app/note_screen/note_screen.dart';
+import 'package:test_app/view/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class LoginScreen extends StatelessWidget {
