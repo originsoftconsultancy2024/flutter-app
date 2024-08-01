@@ -5,8 +5,8 @@ import 'package:test_app/widgets/container.dart';
 import 'package:test_app/widgets/decoration.dart';
 import 'package:test_app/widgets/icon.dart';
 
-class NoteScreen extends StatelessWidget {
-  const NoteScreen({super.key});
+class DecorationScreen extends StatelessWidget {
+  const DecorationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

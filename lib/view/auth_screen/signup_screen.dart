@@ -53,8 +53,8 @@ class SignupScreen extends StatelessWidget {
                 height: 15,
               ),
               AuthButton(
-                 navigate: () {
-                  Get.to(() => const NoteScreen());
+                navigate: () {
+                  Get.to(() => const DecorationScreen());
                 },
                 text: "Sign up",
                 navigation: "Already have an account",

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:test_app/constraints/colors.dart';
 import 'package:test_app/view/auth_button/auth_button.dart';
 import 'package:test_app/view/auth_screen/signup_screen.dart';
-import 'package:test_app/constraints/colors.dart';
 import 'package:test_app/view/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
               ),
               AuthButton(
                 navigate: () {
-                  Get.to(() => const NoteScreen());
+                  Get.to(() => const DecorationScreen());
                 },
                 text: "Login",
                 navigation: "Don't have an account? create account",
