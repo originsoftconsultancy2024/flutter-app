@@ -3,12 +3,18 @@ import 'package:get/get.dart';
 import 'package:test_app/constraints/colors.dart';
 import 'package:test_app/view/auth_button/auth_button.dart';
 import 'package:test_app/view/auth_screen/signup_screen.dart';
-import 'package:test_app/view/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,23 +62,22 @@ class LoginScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const TextfieldWidget(
+              TextfieldWidget(
+                controller: _usernameController,
                 label: "Email",
               ),
-              const TextfieldWidget(
+              TextfieldWidget(
+                controller: _passwordController,
                 label: "Password",
               ),
               const SizedBox(
                 height: 10,
               ),
               AuthButton(
-                navigate: () {
-                  Get.to(() => const DecorationScreen());
-                },
                 text: "Login",
                 navigation: "Don't have an account? create account",
                 onPressed: () {
-                  Get.to(() => const SignupScreen());
+                  Get.to(() => SignupScreen());
                 },
               ),
             ],

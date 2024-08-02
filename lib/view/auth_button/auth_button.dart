@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:test_app/constraints/colors.dart';
 
 class AuthButton extends StatelessWidget {
-  const AuthButton(
-      {super.key,
-      required this.text,
-      required this.navigation,
-      required this.onPressed,
-      required this.navigate});
+  const AuthButton({
+    super.key,
+    required this.text,
+    required this.navigation,
+    required this.onPressed,
+  });
 
   final String text;
   final String navigation;
   final VoidCallback onPressed;
-  final VoidCallback navigate;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class AuthButton extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: blue,
               ),
-              onPressed: navigate,
+              onPressed: onPressed,
               child: Text(
                 text,
                 style: const TextStyle(

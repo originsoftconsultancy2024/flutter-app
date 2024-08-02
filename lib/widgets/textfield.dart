@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 
 class TextfieldWidget extends StatelessWidget {
-  const TextfieldWidget({super.key, required this.label});
+  const TextfieldWidget(
+      {super.key, required this.label, required this.controller});
 
   final String label;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: TextFormField(
+        controller: controller,
         decoration: InputDecoration(
           label: Text(
             label,

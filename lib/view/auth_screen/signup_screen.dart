@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:test_app/controller/auth_controller.dart';
+import 'package:test_app/model/auth-model.dart';
 import 'package:test_app/view/auth_button/auth_button.dart';
-import 'package:test_app/view/auth_screen/login_screen.dart';
-import 'package:test_app/view/note_screen/note_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +17,7 @@ class SignupScreen extends StatelessWidget {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                    "assets/Ellipse 2.png",
-                  ),
+                  Image.asset("assets/Ellipse 2.png"),
                   const Align(
                     heightFactor: 5,
                     widthFactor: 3.8,
@@ -34,34 +32,25 @@ class SignupScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const TextfieldWidget(
-                label: "Name",
+              TextfieldWidget(
+                controller: _usernameController,
+                label: "Username",
               ),
-              const TextfieldWidget(
-                label: "Email",
-              ),
-              const TextfieldWidget(
-                label: "Confirm email",
-              ),
-              const TextfieldWidget(
+              TextfieldWidget(
+                controller: _passwordController,
                 label: "Password",
               ),
-              const TextfieldWidget(
-                label: "Confirm Password",
-              ),
-              const SizedBox(
-                height: 15,
-              ),
+              const SizedBox(height: 15),
               AuthButton(
-                navigate: () {
-                  Get.to(() => const DecorationScreen());
-                },
-                text: "Sign up",
-                navigation: "Already have an account",
-                onPressed: () {
-                  Get.to(() => const LoginScreen());
-                },
-              ),
+                  text: "Sign up",
+                  navigation: "Already have an account",
+                  onPressed: () async {
+                    final data = AuthModel(
+                      _usernameController.text,
+                      _passwordController.text,
+                    );
+                    await AuthController().Register(data, context);
+                  }),
             ],
           ),
         ),
