@@ -1,3 +1,4 @@
+
 class AuthModel {
   final String username;
   final String password;

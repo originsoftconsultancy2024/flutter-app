@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/constraints/colors.dart';
+import 'package:test_app/controller/login_controller.dart';
+import 'package:test_app/model/login_model.dart';
 import 'package:test_app/view/auth_button/auth_button.dart';
 import 'package:test_app/view/auth_screen/signup_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  final LoginController _loginController = LoginController();
+
+  void _handleLogin() {
+    final username = _usernameController.text;
+    final password = _passwordController.text;
+
+    final loginModel = LoginModel(
+      username: username,
+      password: password,
+    );
+
+    _loginController.login(loginModel);
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,9 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               Stack(
                 children: [
-                  Image.asset(
-                    "assets/Ellipse 1.png",
-                  ),
+                  Image.asset("assets/Ellipse 1.png"),
                   const Align(
                     alignment: Alignment.center,
                     heightFactor: 6.5,
@@ -41,13 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 20,
-              ),
+              const SizedBox(height: 20),
               const Text(
                 "WELCOME",
                 style: TextStyle(
-                  color: blue,
+                  color: Colors.blue,
                   fontSize: 45,
                   fontWeight: FontWeight.bold,
                 ),
@@ -59,26 +65,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontSize: 25,
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               TextfieldWidget(
                 controller: _usernameController,
-                label: "Email",
+                label: "Username",
               ),
               TextfieldWidget(
                 controller: _passwordController,
                 label: "Password",
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               AuthButton(
-                text: "Login",
-                navigation: "Don't have an account? create account",
-                onPressed: () {
+                navigations: () {
                   Get.to(() => SignupScreen());
                 },
+                text: "Login",
+                navigation: "Don't have an account? create account",
+                onPressed: _handleLogin,
               ),
             ],
           ),

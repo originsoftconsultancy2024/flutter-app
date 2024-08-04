@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:test_app/controller/auth_controller.dart';
-import 'package:test_app/model/auth-model.dart';
+import 'package:get/get.dart';
+import 'package:test_app/controller/signup_controller.dart';
+import 'package:test_app/model/signup_model.dart';
 import 'package:test_app/view/auth_button/auth_button.dart';
+import 'package:test_app/view/auth_screen/login_screen.dart';
 import 'package:test_app/widgets/textfield.dart';
 
 class SignupScreen extends StatelessWidget {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +46,9 @@ class SignupScreen extends StatelessWidget {
               ),
               const SizedBox(height: 15),
               AuthButton(
+                  navigations: () {
+                    Get.to(() =>  LoginScreen());
+                  },
                   text: "Sign up",
                   navigation: "Already have an account",
                   onPressed: () async {

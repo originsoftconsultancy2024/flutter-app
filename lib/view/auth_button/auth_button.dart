@@ -7,11 +7,13 @@ class AuthButton extends StatelessWidget {
     required this.text,
     required this.navigation,
     required this.onPressed,
+    required this.navigations,
   });
 
   final String text;
   final String navigation;
   final VoidCallback onPressed;
+  final VoidCallback navigations;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +45,7 @@ class AuthButton extends StatelessWidget {
           height: 15,
         ),
         InkWell(
-          onTap: onPressed,
+          onTap: navigations,
           child: Text(
             navigation,
             style: const TextStyle(
